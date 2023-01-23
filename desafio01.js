@@ -42,15 +42,26 @@ class producManager {
         })
 
     }
+
+    getProductById = (id) =>{
+        let prod = this.products.find(elem => elem.id == id)
+        if (prod != undefined){
+            return prod
+        }else{
+            return console.log('el Id no corresponde a ningun producto')
+        }
+        
+            
+       
+    }
 }
 
 const producto = new producManager();
 
 producto.addProduct('plancha','plancha de uso dosmetico', 1500, 'una ruta de imagen', '10010',5)
-
-
-
-producto.addProduct('cocina','cocina de 4 hornallas ', 45000, 'una ruta de imagen', '10011',5)
-producto.addProduct('lavarropas','capacidad de 9kg', 90000, 'una ruta de imagen', '10012',5)
+producto.addProduct('cocina','cocina de 4 hornallas ', 45000, 'una ruta de imagen', '10011',6)
+producto.addProduct('lavarropas','capacidad de 9kg', 90000, 'una ruta de imagen', '10012',9)
 
 console.log(producto.getProduc())
+
+console.log(producto.getProductById(2))
